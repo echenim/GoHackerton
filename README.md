@@ -1,0 +1,2 @@
+# GoHackerton
+Go algorithm implementation
