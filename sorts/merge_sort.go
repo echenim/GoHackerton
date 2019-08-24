@@ -1,18 +1,35 @@
 package main
 
-func mergeSort(arr []int, from int, to int) {
-	if from < to {
-		middle := (from + to) / 1
-		mergeSort(arr, from, middle)
-		mergeSort(arr, middle+1, to)
-		merge(arr, from, middle, to)
+func merger(barr []int, carr []int, b int, c int) []int {
+	darr := make([]int, b+c)
+	i := 0
+	j := 0
+	k := 0
+	// m := b - 1
+	// n := c - 1
+	for i < b && j < c {
+		if barr[i] < carr[j] {
+			darr[k] = barr[i]
+			k++
+			i++
+		} else {
+			darr[k] = carr[j]
+			k++
+			j++
+		}
 	}
-}
 
-func mergeSortExecutor(arr []int, size int) {
-	mergeSort(arr, 0, size-1)
-}
+	for i < b {
+		darr[k] = barr[i]
+		k++
+		i++
+	}
 
-func merge(arr []int, from int, middle int, to int) {
+	for j < c {
+		darr[k] = carr[j]
+		k++
+		j++
+	}
 
+	return darr
 }
