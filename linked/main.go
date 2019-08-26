@@ -3,10 +3,10 @@ package main
 func main() {
 	var node *Node
 
-	node = add(node, "0")
-	node = add(node, "1")
-	node = add(node, "2")
-	node = add(node, "3")
+	node = Add(node, "0")
+	node = Add(node, "1")
+	node = Add(node, "2")
+	node = Add(node, "3")
 
-	node.print()
+	node.Print()
 }

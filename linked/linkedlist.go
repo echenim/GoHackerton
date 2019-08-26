@@ -10,12 +10,16 @@ type Node struct {
 	next *Node
 }
 
-func add(node *Node, _data string) *Node {
+//Add function accept node pointer and data value
+//as paramenters
+func Add(node *Node, _data string) *Node {
 
 	return &Node{data: _data, next: node}
 }
 
-func (n Node) print() {
+//Print is a receiver function
+//for printing all the nodes in the linkedlist
+func (n Node) Print() {
 	fmt.Printf("%v ", n.data)
 	current := n.next
 	if current.next == nil {
