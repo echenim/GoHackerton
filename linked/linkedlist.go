@@ -10,8 +10,8 @@ type Node struct {
 	next *Node
 }
 
-//Create function to linkedlist
-func Create(arr []int) *Node {
+//Add function to linkedlist
+func Add(arr []int) *Node {
 
 	var first *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
 	var last *Node = new(Node)  //there will be a runtime error if the point *Node is not initialize as new(Node)
