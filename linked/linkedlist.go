@@ -71,8 +71,13 @@ func (_n Node) IndexOf(_d int) {
 }
 
 //IsEmpty returns true if the list is empty
-func (_n Node) IsEmpty() {
+func (_n Node) IsEmpty() bool {
+	state := false
+	if _n.data == 0 && _n.next == nil {
+		state = true
+	}
 
+	return state
 }
 
 //Size returns the linked list size
