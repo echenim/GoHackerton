@@ -18,28 +18,23 @@ func Add(arr []int) *Node {
 
 	var i int
 
-	//head node
-	values := arr[0]
-	first.data = values
-	first.next = nil
-	last = first
-
-	for i = 1; i < len(arr); i++ {
-
-		var t *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
-		t.data = arr[i]
-		t.next = nil
-		last.next = t
-		last = t
+	for i = 0; i < len(arr); i++ {
+		if i == 0 {
+			values := arr[i]
+			first.data = values
+			first.next = nil
+			last = first
+		}
+		if i > 0 {
+			var t *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
+			t.data = arr[i]
+			t.next = nil
+			last.next = t
+			last = t
+		}
 
 	}
 	return first
-}
-
-//Add function accept node pointer and data value
-//as paramenters
-func Add(node *Node, _data int) *Node {
-	return &Node{data: _data, next: node}
 }
 
 //Print is a receiver function
