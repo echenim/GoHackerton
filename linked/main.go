@@ -10,4 +10,5 @@ func main() {
 
 	first.Print()
 	fmt.Printf("\nis linkedlist empty %v", first.IsEmpty())
+	fmt.Printf("\nHead node = %v", first.Head())
 }

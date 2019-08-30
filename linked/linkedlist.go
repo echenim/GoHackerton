@@ -86,6 +86,6 @@ func (_n Node) Size() {
 }
 
 //Head returns the first node, so we can iterate on it
-func (_n Node) Head() {
-
+func (_n Node) Head() int {
+	return _n.data
 }
