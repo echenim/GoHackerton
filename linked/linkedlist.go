@@ -66,8 +66,7 @@ func (_n Node) RemoveAt(_p int) {
 }
 
 //RemoveAtFirstNode function
-func RemoveAtFirstNode(_n *Node) *Node {
-
+func (_n *Node) RemoveAtFirstNode() *Node {
 	_n = _n.next
 	return &Node{
 		data: _n.data,
@@ -91,8 +90,14 @@ func (_n Node) IsEmpty() bool {
 }
 
 //Size returns the linked list size
-func (_n Node) Size() {
-
+func (_n *Node) Size() int {
+	node := _n
+	i := 1
+	for node.next != nil {
+		node = node.next
+		i++
+	}
+	return i
 }
 
 //Head returns the first node, so we can iterate on it
