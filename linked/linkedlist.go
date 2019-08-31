@@ -65,6 +65,16 @@ func (_n Node) RemoveAt(_p int) {
 
 }
 
+//RemoveAtFirstNode function
+func RemoveAtFirstNode(_n *Node) *Node {
+
+	_n = _n.next
+	return &Node{
+		data: _n.data,
+		next: _n.next,
+	}
+}
+
 //IndexOf returns the position of the Item _d
 func (_n Node) IndexOf(_d int) {
 
