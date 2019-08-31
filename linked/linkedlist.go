@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 //Node structure for linkedlist
 type Node struct {
-	data int
+	data string
 	next *Node
 }
 
@@ -20,14 +21,16 @@ func Add(arr []int) *Node {
 
 	for i = 0; i < len(arr); i++ {
 		if i == 0 {
-			values := arr[i]
+
+			values := strconv.FormatInt(int64(arr[i]), 10)
+
 			first.data = values
 			first.next = nil
 			last = first
 		}
 		if i > 0 {
 			var t *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
-			t.data = arr[i]
+			t.data = strconv.FormatInt(int64(arr[i]), 10)
 			t.next = nil
 			last.next = t
 			last = t
@@ -52,6 +55,33 @@ func (_n *Node) Print() {
 	}
 
 	fmt.Print(" --> null")
+}
+
+//Display is a receiver function
+//for printing all the nodes in the linkedlist
+func Display(_n *Node) {
+
+	for _n != nil {
+		fmt.Printf("  %v --> ", _n.data)
+		_n = _n.next
+	}
+
+	fmt.Print("null")
+}
+
+//RecursiveDisplay is a receiver function
+//for printing all the nodes in the linkedlist
+func RecursiveDisplay(_n *Node) {
+
+	if _n != nil {
+		fmt.Printf("  %v --> ", _n.data)
+		RecursiveDisplay(_n.next)
+	}
+
+	if _n == nil {
+		fmt.Print("null")
+	}
+
 }
 
 //Insert adds an item _d at position _p
@@ -82,7 +112,7 @@ func (_n Node) IndexOf(_d int) {
 //IsEmpty returns true if the list is empty
 func (_n Node) IsEmpty() bool {
 	state := false
-	if _n.data == 0 && _n.next == nil {
+	if _n.data == "" && _n.next == nil {
 		state = true
 	}
 
@@ -101,6 +131,6 @@ func (_n *Node) Size() int {
 }
 
 //Head returns the first node, so we can iterate on it
-func (_n Node) Head() int {
+func (_n Node) Head() string {
 	return _n.data
 }
