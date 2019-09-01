@@ -105,8 +105,21 @@ func (_n *Node) RemoveAtFirstNode() *Node {
 }
 
 //IndexOf returns the position of the Item _d
-func (_n Node) IndexOf(_d int) {
+func IndexOf(node *Node, _d string) string {
 
+	var rs string
+	index := 0
+
+	for node != nil {
+		index = index + 1
+		if node.data == _d {
+			rs = _d + " found on index " + strconv.FormatInt(int64(index), 10)
+			break
+		}
+
+		node = node.next
+	}
+	return rs
 }
 
 //IsEmpty returns true if the list is empty
@@ -137,9 +150,8 @@ func (_n Node) Head() string {
 }
 
 //Search function for searching by values in the linkedlist
-func Search(n *Node, paramenter string) string {
+func Search(node *Node, paramenter string) string {
 	var rs string
-	node := n
 
 	for node != nil {
 		if node.data == paramenter {
