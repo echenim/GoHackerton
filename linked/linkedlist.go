@@ -127,10 +127,26 @@ func (_n *Node) Size() int {
 		node = node.next
 		i++
 	}
+
 	return i
 }
 
 //Head returns the first node, so we can iterate on it
 func (_n Node) Head() string {
 	return _n.data
+}
+
+//Search function for searching by values in the linkedlist
+func Search(n *Node, paramenter string) string {
+	var rs string
+	node := n
+
+	for node != nil {
+		if node.data == paramenter {
+			rs = paramenter
+		}
+
+		node = node.next
+	}
+	return rs
 }

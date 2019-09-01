@@ -1,10 +1,13 @@
 package main
 
+import "fmt"
+
 func main() {
 
 	arr := []int{3, 5, 7, 4, 8, 6, 9}
 	//arr := []int{}
 	next := Add(arr)
+	fmt.Printf("\nparameter %v \n", Search(next, "8"))
 	RecursiveDisplay(next)
 	//Display(next)
 	// first := Add(arr)
