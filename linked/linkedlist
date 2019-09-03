@@ -12,7 +12,7 @@ type Node struct {
 }
 
 //Add function to linkedlist
-func Add(arr []int) *Node {
+func Add(arr []string) *Node {
 
 	var first *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
 	var last *Node = new(Node)  //there will be a runtime error if the point *Node is not initialize as new(Node)
@@ -22,7 +22,7 @@ func Add(arr []int) *Node {
 	for i = 0; i < len(arr); i++ {
 		if i == 0 {
 
-			values := strconv.FormatInt(int64(arr[i]), 10)
+			values := arr[i]
 
 			first.data = values
 			first.next = nil
@@ -30,7 +30,7 @@ func Add(arr []int) *Node {
 		}
 		if i > 0 {
 			var t *Node = new(Node) //there will be a runtime error if the point *Node is not initialize as new(Node)
-			t.data = strconv.FormatInt(int64(arr[i]), 10)
+			t.data = arr[i]
 			t.next = nil
 			last.next = t
 			last = t
@@ -91,7 +91,26 @@ func (_n Node) Insert(_p int, _d string) Node {
 }
 
 //RemoveAt adds an item _d at position _p
-func (_n Node) RemoveAt(_p int) {
+func RemoveAt(node *Node, data string) {
+	if node == nil {
+		return
+	}
+	// If the head is matched then we need a new head
+	if node.data == data {
+		// Delete head by overwriting it with next node
+		node = node.next
+		return
+	}
+
+	currentNode := node
+	for currentNode.next != nil {
+		if currentNode.next.data == data {
+			currentNode.next = currentNode.next.next
+			return
+		}
+
+		currentNode = currentNode.next
+	}
 
 }
 
@@ -152,7 +171,6 @@ func (_n Node) Head() string {
 //Search function for searching by values in the linkedlist
 func Search(node *Node, paramenter string) string {
 	var rs string
-
 	for node != nil {
 		if node.data == paramenter {
 			rs = paramenter

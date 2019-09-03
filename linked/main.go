@@ -3,31 +3,29 @@ package main
 import "fmt"
 
 func main() {
+	// list := &SingleList{}
+	// list.append(&Node{data: "10", next: nil})
+	// list.append(&Node{data: "20", next: nil})
+	// list.append(&Node{data: "30", next: nil})
+	// list.append(&Node{data: "40", next: nil})
+	// list.append(&Node{data: "50", next: nil})
+	// list.append(&Node{data: "60", next: nil})
+	// list.append(&Node{data: "70", next: nil})
+	// list.append(&Node{data: "80", next: nil})
+	// //node := list.head
+	// //list.Display()
+	// Display(list.head, 1)
+	// list.Delete("50")
+	// list.Display()
 
-	arr := []int{3, 5, 7, 4, 8, 6, 9}
-	//arr := []int{}
-	next := Add(arr)
-	fmt.Printf("parameter %v \n", Search(next, "8"))
-	fmt.Printf("parameter %v \n", IndexOf(next, "6"))
-	RecursiveDisplay(next)
-	//Display(next)
-	// first := Add(arr)
-	// fmt.Printf("\nis linkedlist empty %v", first.IsEmpty())
-	// fmt.Printf("\nHead node = %v", first.Head())
-	// fmt.Printf("\nlinkedlist has size = %v", first.Size())
-	// fmt.Println("")
-	// first.Print()
-	// next := first
-	// for next.next != nil {
+	arr := []string{"10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120"}
+	list := &SingleList{}
+	list.head = Append(arr)
+	//list.AppendFromArray(arr)
 
-	// 	fmt.Println("\n--------------------")
-	// 	next.RemoveAtFirstNode()
-	// 	fmt.Printf("\nis linkedlist empty %v", next.IsEmpty())
-	// 	fmt.Printf("\nHead node = %v", next.Head())
-	// 	fmt.Printf("\nlinkedlist has size = %v", next.Size())
-	// 	fmt.Println("")
-	// 	next.Print()
-	// 	next = next.next
-	// }
+	Display(list.head)
+	fmt.Print("\n -------------------- \n")
+	list.DeleteNodeFromLinkedlist("60")
+	list.Display()
 
 }
