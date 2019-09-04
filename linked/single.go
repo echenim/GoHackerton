@@ -141,7 +141,13 @@ func (sl *SingleList) Insert(position int, data string) {
 
 	}
 
+	//by setting i to start from 0 the new data will be inserted after the specified index
+	//by setting i to start from 0 and i is less than or equal to position the data will be inserted 2 place after the specified index
+	//by setting i to start from 1 and the if position-1 == i the new data will be inserted  the specified index
+	//by setting i to start from 1 and i is less than or equal to position the data will be inserted 1 place after the specified index
+
 	for i = 1; i < position; i++ {
+
 		if position-1 == i {
 			node := &Node{data: data, next: current.next}
 			current.next = node
