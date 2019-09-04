@@ -23,9 +23,16 @@ func main() {
 	list.head = Append(arr)
 	//list.AppendFromArray(arr)
 
-	Display(list.head)
-	fmt.Print("\n -------------------- \n")
-	list.DeleteNodeFromLinkedlist("60")
+	// list.Display()
+	// //Display(list.head)
+	// fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
+	// fmt.Print("-------------------- \n")
+	// //list.DeleteNodeFromLinkedlist("60")
+	// list.Display()
+	// fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
+	list.Insert(5, "arrow")
+	fmt.Print("-------------------- \n")
 	list.Display()
+	fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
 
 }

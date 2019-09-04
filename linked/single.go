@@ -93,6 +93,7 @@ func (sl *SingleList) Display() {
 	for n := sl.head; n != nil; n = n.next {
 		fmt.Printf("%v --> ", n.data)
 	}
+	fmt.Print("nil")
 }
 
 //DisplayNodeWithNextMemoryAddress fucntion print out the list
@@ -121,7 +122,45 @@ func (sl *SingleList) DeleteNodeFromLinkedlist(data string) {
 			currentNode.next = currentNode.next.next
 			return
 		}
-
 		currentNode = currentNode.next
 	}
+
+}
+
+//Insert adds an item _d at position _p
+func (sl *SingleList) Insert(position int, data string) {
+	var i int
+	if sl.head == nil {
+		return
+	}
+	current := sl.head
+	//If the head is matched then we need a new head
+	if position == 1 {
+		node := &Node{data: data, next: current}
+		sl.head = node
+
+	}
+
+	for i = 1; i < position; i++ {
+		if position-1 == i {
+			node := &Node{data: data, next: current.next}
+			current.next = node
+		}
+		current = current.next
+	}
+
+}
+
+func (sl *SingleList) size() int {
+	i := 0
+	if sl.head == nil {
+		return i
+	}
+	node := sl.head
+	for node != nil {
+		i++
+		node = node.next
+	}
+
+	return i
 }
