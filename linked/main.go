@@ -34,5 +34,7 @@ func main() {
 	fmt.Print("-------------------- \n")
 	list.Display()
 	fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
-
+	fmt.Print("-------------------- \n")
+	ReversingData(list)
+	list.Display()
 }

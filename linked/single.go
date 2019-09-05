@@ -170,3 +170,26 @@ func (sl *SingleList) size() int {
 
 	return i
 }
+
+//ReversingData reversing linked list by reversing the data
+func ReversingData(sl *SingleList) {
+	arr := make([]string, 13)
+	var ai int
+
+	for current := sl.head; current != nil; current = current.next {
+		arr[ai] = current.data
+		ai++
+	}
+
+	for current := sl.head; current != nil; current = current.next {
+		ai--
+		current.data = arr[ai]
+
+	}
+
+}
+
+//ReversingLinks reversing linked list by reversing the data
+func ReversingLinks(sl *SingleList) {
+
+}
