@@ -249,3 +249,36 @@ func Merge(sl *SingleList, sll *SingleList) *SingleList {
 	}
 	return mergelist
 }
+
+//MergeWithDuplicates fucntion for linked list sl and sll and allow duplicates in both list to
+func MergeWithDuplicates(sl *SingleList, sll *SingleList) *SingleList {
+	mergelist := &SingleList{}
+	a := sl.head
+	b := sll.head
+
+	for a.next != nil && b.next != nil {
+		ai, _ := strconv.ParseInt(a.data, 10, 0)
+		bi, _ := strconv.ParseInt(b.data, 10, 0)
+		if ai <= bi {
+			mergelist.Append(&Node{data: a.data, next: nil})
+			a = a.next
+		}
+
+		if ai > bi {
+			mergelist.Append(&Node{data: b.data, next: nil})
+			b = b.next
+		}
+
+	}
+
+	if a.next != nil && b.next == nil {
+		mergelist.Append(&Node{data: a.data, next: nil})
+		a = a.next
+	}
+
+	if a.next == nil && b.next != nil {
+		mergelist.Append(&Node{data: b.data, next: nil})
+		b = b.next
+	}
+	return mergelist
+}
