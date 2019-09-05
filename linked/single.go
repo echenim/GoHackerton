@@ -207,10 +207,28 @@ func (sl *SingleList) ReversingLinks() {
 
 //Concatenation concat two linked list
 func Concatenation(sl *SingleList, sll *SingleList) {
-
 	current := sl.head
 	for current.next != nil {
 		current = current.next
 	}
 	current.next = sll.head
+}
+
+//Merge fucntion for linked list sl and sll
+func Merge(sl *SingleList, sll *SingleList) {
+	a := sl.head
+	b := sll.head
+
+	for a != nil && b != nil {
+
+	}
+
+	if a.next != nil && b.next == nil {
+
+	}
+
+	if a.next == nil && b.next != nil {
+
+	}
+
 }
