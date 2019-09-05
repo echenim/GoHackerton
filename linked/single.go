@@ -217,7 +217,7 @@ func Concatenation(sl *SingleList, sll *SingleList) {
 	current.next = sll.head
 }
 
-//Merge fucntion for linked list a and b without allowing duplicates in both list
+//Merge fucntion for list a and b without allowing duplicates in both list
 func Merge(sl *SingleList, sll *SingleList) *SingleList {
 	mergelist := &SingleList{}
 	a := sl.head
