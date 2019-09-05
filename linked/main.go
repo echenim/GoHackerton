@@ -19,10 +19,13 @@ func main() {
 	// list.Display()
 
 	arr := []string{"10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110", "120"}
+	ara := []string{"10", "20", "30", "40", "50", "60", "70"}
 	list := &SingleList{}
+	listB := &SingleList{}
 	list.head = Append(arr)
-	//list.AppendFromArray(arr)
-
+	listB.head = Append(ara)
+	Concatenation(list, listB)
+	listB.Display()
 	// list.Display()
 	// //Display(list.head)
 	// fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
@@ -34,8 +37,12 @@ func main() {
 	fmt.Print("-------------------- \n")
 	list.Display()
 	fmt.Printf("\nnumber of node in the linked list is : %v \n", list.size())
-	fmt.Print("-------------------- \n")
+
+	fmt.Print("\n--------reverse the list by pointer------------ \n")
+	list.ReversingLinks()
+	list.Display()
+	fmt.Print("\n--------reverse the list by data------------ \n")
 	size := list.size()
-	ReversingData(list, size)
+	list.ReversingData(size)
 	list.Display()
 }
