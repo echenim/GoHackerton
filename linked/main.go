@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	// list := &SingleList{}
 	// list.append(&Node{data: "10", next: nil})
@@ -16,15 +18,26 @@ func main() {
 	// list.Delete("50")
 	// list.Display()
 
+	// arr := []string{"10", "30", "40", "50", "80", "90", "100", "110", "120"}
+	// ara := []string{"20", "50", "60", "70", "75", "91", "122", "170"}
+	// list := &SingleList{}
+	// list.head = Append(arr)
+	// k := looped(list)
+	// fmt.Printf("is linked list looped : %v", k.IsLoop())
+	// k.Display()
+
 	arr := []string{"10", "30", "40", "50", "80", "90", "100", "110", "120"}
 	ara := []string{"20", "50", "60", "70", "75", "91", "122", "170"}
 	list := &SingleList{}
 	listB := &SingleList{}
 	list.head = Append(arr)
+	k := looped(list)
+	fmt.Printf("is linked list looped : %v", k.IsLoop())
+	k.Display()
 	listB.head = Append(ara)
 
-	merg := Merge(list, listB)
-	merg.Display()
+	// merg := Merge(list, listB)
+	// merg.Display()
 	// Concatenation(list, listB)
 	// listB.Display()
 	// // list.Display()

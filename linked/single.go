@@ -290,3 +290,40 @@ func MergeWithDuplicates(sl *SingleList, sll *SingleList) *SingleList {
 	}
 	return mergelist
 }
+
+//IsLoop function to check if the linked list is looped or circular
+func (sl *SingleList) IsLoop() bool {
+
+	p := sl.head
+	q := sl.head
+
+	for p != nil && q != nil {
+		p = p.next
+		q = q.next.next
+		if p == q {
+			return true
+		}
+	}
+	//arr := []string{"10", "30", "40", "50", "80", "90", "100", "110", "120"}
+	return false
+}
+
+func looped(sl *SingleList) *SingleList {
+
+	p := sl.head
+	q := sl.head
+	for q != nil {
+		if q.data == "80" {
+			break
+		}
+		q = q.next
+	}
+
+	for p.next != nil {
+		p = p.next
+	}
+	p.next = q
+
+	sl.head = p
+	return sl
+}
