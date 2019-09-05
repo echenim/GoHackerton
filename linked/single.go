@@ -226,6 +226,9 @@ func Merge(sl *SingleList, sll *SingleList) *SingleList {
 	for a.next != nil && b.next != nil {
 		ai, _ := strconv.ParseInt(a.data, 10, 0)
 		bi, _ := strconv.ParseInt(b.data, 10, 0)
+
+		//duplicate is not allowed between both list a and b
+		//duplicates are filter out by the logic for ai<bi
 		if ai < bi {
 			mergelist.Append(&Node{data: a.data, next: nil})
 			a = a.next
@@ -259,6 +262,11 @@ func MergeWithDuplicates(sl *SingleList, sll *SingleList) *SingleList {
 	for a.next != nil && b.next != nil {
 		ai, _ := strconv.ParseInt(a.data, 10, 0)
 		bi, _ := strconv.ParseInt(b.data, 10, 0)
+
+		//duplicate is allowed between both list a and b
+		//by saying the logic for ai<bi to be ai<=bi
+		//it is the less than or equal sign "<=" that determined if
+		//duplicate will be allowed or not
 		if ai <= bi {
 			mergelist.Append(&Node{data: a.data, next: nil})
 			a = a.next
