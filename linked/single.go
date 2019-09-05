@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 //SingleList defination for single linked list
 type SingleList struct {
@@ -214,21 +217,35 @@ func Concatenation(sl *SingleList, sll *SingleList) {
 	current.next = sll.head
 }
 
-//Merge fucntion for linked list sl and sll
-func Merge(sl *SingleList, sll *SingleList) {
+//Merge fucntion for linked list a and b without allowing duplicates in both list
+func Merge(sl *SingleList, sll *SingleList) *SingleList {
+	mergelist := &SingleList{}
 	a := sl.head
 	b := sll.head
 
-	for a != nil && b != nil {
+	for a.next != nil && b.next != nil {
+		ai, _ := strconv.ParseInt(a.data, 10, 0)
+		bi, _ := strconv.ParseInt(b.data, 10, 0)
+		if ai < bi {
+			mergelist.Append(&Node{data: a.data, next: nil})
+			a = a.next
+		}
+
+		if ai > bi {
+			mergelist.Append(&Node{data: b.data, next: nil})
+			b = b.next
+		}
 
 	}
 
 	if a.next != nil && b.next == nil {
-
+		mergelist.Append(&Node{data: a.data, next: nil})
+		a = a.next
 	}
 
 	if a.next == nil && b.next != nil {
-
+		mergelist.Append(&Node{data: b.data, next: nil})
+		b = b.next
 	}
-
+	return mergelist
 }
