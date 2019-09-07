@@ -8,7 +8,7 @@ type Node struct {
 
 //Dnode defination for double linked list
 type Dnode struct {
-	prev *Node
+	prev *Dnode
 	data string
-	next *Node
+	next *Dnode
 }
