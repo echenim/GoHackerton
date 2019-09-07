@@ -327,3 +327,17 @@ func looped(sl *SingleList) *SingleList {
 	sl.head = p
 	return sl
 }
+
+func circularLinkedlist(sl *SingleList) *SingleList {
+	cl := &SingleList{}
+	cl.Append(&Node{data: "", next: sl.head})
+	p := cl.head
+	q := sl.head
+
+	for p.next != nil {
+		p = p.next
+	}
+	p.next = q
+
+	return cl
+}

@@ -18,6 +18,7 @@ func main() {
 	// list.Delete("50")
 	// list.Display()
 
+	//
 	// arr := []string{"10", "30", "40", "50", "80", "90", "100", "110", "120"}
 	// ara := []string{"20", "50", "60", "70", "75", "91", "122", "170"}
 	// list := &SingleList{}
@@ -31,7 +32,7 @@ func main() {
 	list := &SingleList{}
 	listB := &SingleList{}
 	list.head = Append(arr)
-	k := looped(list)
+	k := circularLinkedlist(list)
 	fmt.Printf("is linked list looped : %v", k.IsLoop())
 	k.Display()
 	listB.head = Append(ara)
