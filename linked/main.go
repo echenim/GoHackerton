@@ -58,8 +58,14 @@ func main() {
 	// size := list.size()
 	// list.ReversingData(size)
 	// list.Display()
-
+	var i int
 	arr := []string{"20", "50", "60", "70", "75", "91", "122", "170"}
 	doublelist := &DoubleLinkedlist{}
-	doublelist.head = append(arr)
+	//doublelist.head = append(arr)
+	for i = 0; i < len(arr); i++ {
+		doublelist.add(arr[i])
+	}
+	doublelist.display()
+	//doublelist.Insert(1, "10")
+
 }
