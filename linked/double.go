@@ -9,6 +9,7 @@ type DoubleLinkedlist struct {
 }
 
 //Append function implemetation for double linked list
+//use this function to create and populate the linked list
 func (dl *DoubleLinkedlist) Append(data string) {
 
 	node := &Dnode{data: data}

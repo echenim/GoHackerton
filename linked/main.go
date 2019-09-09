@@ -63,7 +63,7 @@ func main() {
 	doublelist := &DoubleLinkedlist{}
 	//doublelist.head = append(arr)
 	for i = 0; i < len(arr); i++ {
-		doublelist.add(arr[i])
+		doublelist.Append(arr[i])
 	}
 	doublelist.display()
 	//doublelist.Insert(1, "10")
