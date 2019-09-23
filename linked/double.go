@@ -16,7 +16,7 @@ func (dl *DoubleLinkedlist) Append(data string) {
 	if dl.head == nil {
 		dl.head = node
 	} else {
-		current := dl.tail
+		current := dl.head
 		current.next = node
 		node.prev = dl.tail
 	}
@@ -57,8 +57,10 @@ func (dl *DoubleLinkedlist) Insert(position int, data string) {
 
 func (dl *DoubleLinkedlist) display() {
 	current := dl.head
+	i := 0
 	for current != nil {
-		fmt.Printf("first node in the list is : %v \n", current.data)
+		i++
+		fmt.Printf("%v %v \n", i, current)
 		current = current.next
 	}
 	return
