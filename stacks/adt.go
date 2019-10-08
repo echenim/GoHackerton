@@ -36,6 +36,10 @@ func (s stack) IsEmpty() bool {
 	return status
 }
 
-// func (s stack) IsFull() {
-
-// }
+func (s stack) IsFull() bool {
+	status := false
+	if s.top == s.size {
+		status = true
+	}
+	return status
+}

@@ -17,6 +17,7 @@ func main() {
 	fmt.Printf("stack size :: %v\n", k.size)
 	fmt.Printf("current top :: %v\n", k.top)
 	fmt.Printf("Is stack empty: %v\n", k.IsEmpty())
+	fmt.Printf("Is stack full: %v\n", k.IsFull())
 	fmt.Printf("stack from F->L :: %v", k.arr)
 
 }
