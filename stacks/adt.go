@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type stack struct {
 	size int
 	top  int
@@ -8,15 +10,27 @@ type stack struct {
 
 func (s stack) Push(a []int) stack {
 	var i int
-	s.top++
+
 	for i = 0; i < s.size; i++ {
 		s.arr[i] = a[i]
-		s.top++
+		if s.top < s.size {
+			s.top++
+		}
+
 	}
 	return s
 }
 
 func (s stack) Pop() {
+
+	if s.top == -1 {
+		fmt.Println("stack underflow")
+	}
+
+	for s.top != -1 {
+		fmt.Printf(" %v", s.arr[s.top])
+		s.top--
+	}
 
 }
 
