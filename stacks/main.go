@@ -5,3 +5,4 @@ func main() {
 	st.size = 10
 	//st.array = [5]int
 }
+

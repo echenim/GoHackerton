@@ -21,3 +21,13 @@ func ReverseString(s []string) {
 		last--
 	}
 }
+
+// func Reverse(type Element)(s []Element){
+// 	first := 0
+// 	last := len(s) - 1
+// 	for first < last {
+// 		s[first], s[last] = s[last], s[first]
+// 		first++
+// 		last--
+// 	}
+// }
