@@ -8,15 +8,10 @@ type stack struct {
 	arr  []int
 }
 
-func (s stack) Push(a []int) stack {
-	var i int
-
-	for i = 0; i < s.size; i++ {
-		s.arr[i] = a[i]
-		if s.top < s.size {
-			s.top++
-		}
-
+func (s stack) Push(a int) stack {
+	if s.top < s.size {
+		s.top++
+		s.arr[s.top] = a
 	}
 	return s
 }

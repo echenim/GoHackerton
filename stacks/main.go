@@ -32,3 +32,6 @@ func datagen(size int) []int {
 	fmt.Printf("generated data :: %v\n", arr)
 	return arr
 }
+	fmt.Printf("generated data :: %v\n", arr)
+	return arr
+}
