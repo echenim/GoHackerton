@@ -60,13 +60,14 @@ import "fmt"
 
 func main(){
 	list := &SingleList{}
-	list.Append(&Node{data: "10", next: nil})
-	list.Append(&Node{data: "15", next: nil})
-	list.Append(&Node{data: "8", next: nil})
-	list.Append(&Node{data: "3", next: nil})
+	list.Push(&Node{data: "10", next: nil})
+	list.Push(&Node{data: "15", next: nil})
+	list.Push(&Node{data: "8", next: nil})
+	list.Push(&Node{data: "3", next: nil})
 	//node := list.head
 	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v",list.top)
 	fmt.Print("\n")
-	//list.DeleteNodeFromLinkedlist("50")
+	list.Pop()
 	list.Display()
 }
