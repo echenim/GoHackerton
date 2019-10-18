@@ -74,7 +74,7 @@ func (sl *SingleList) Append(node *Node) {
 //Display fucntion print out the list
 func Display(n *Node) {
 	if n != nil {
-		fmt.Printf("%v <-- ", n.data)
+		fmt.Printf("%v --> ", n.data)
 		Display(n.next)
 	}
 
@@ -94,7 +94,7 @@ func DisplayNodeWithNextMemoryAddress(n *Node, i int) {
 //Display fucntion print out the list
 func (sl *SingleList) Display() {
 	for n := sl.head; n != nil; n = n.next {
-		fmt.Printf("%v --> ", n.data)
+		fmt.Printf("%v <-- ", n.data)
 	}
 	fmt.Print("nil")
 }

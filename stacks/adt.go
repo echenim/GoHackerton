@@ -1,32 +1,18 @@
 package main
 
-import "fmt"
-
 type stack struct {
 	size int
 	top  int
 	arr  []int
 }
 
-func (s stack) Push(a int) stack {
-	if s.top < s.size {
-		s.top++
-		s.arr[s.top] = a
-	}
-	return s
+//Push insert into stack value
+func (s stack) Push(a int) {
+	s.arr[s.top] = a
 }
 
 func (s stack) Pop() {
-
-	if s.top == -1 {
-		fmt.Println("stack underflow")
-	}
-
-	for s.top != -1 {
-		fmt.Printf(" %v", s.arr[s.top])
-		s.top--
-	}
-
+	s.arr[s.top] = 0
 }
 
 // func (s stack) Peek() {
