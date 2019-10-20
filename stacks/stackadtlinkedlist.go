@@ -10,28 +10,24 @@ type SingleList struct {
 	head *Node
 }
 
-
-
-
 //Push : builds a linked list by appending pionter nodes
 // to a receiver function
-func (sl * SingleList) Push(node *Node) {
+func (sl *SingleList) Push(node *Node) {
+
 	if sl.head == nil {
-		sl.top++
+		sl.top = 1
 		sl.head = node
 		return
 	}
 	current := sl.head
 
 	for current.next != nil {
-		sl.top++
+		sl.top = sl.top + 1
 		current = current.next
 	}
 
 	current.next = node
 }
-
-
 
 //Display fucntion print out the list
 func (sl *SingleList) Display() {
@@ -44,8 +40,7 @@ func (sl *SingleList) Display() {
 //Pop function to delete from stack
 func (sl *SingleList) Pop() {
 	if sl.head == nil {
-		fmt.Print("stack underflow")
-		return
+		fmt.Println("stack underflow")
 	}
 
 	//check if we have gotten to the last node
@@ -54,12 +49,10 @@ func (sl *SingleList) Pop() {
 	}
 
 	currentNode := sl.head
-	for currentNode.next != nil {
+	for currentNode != nil {
 		if currentNode.next.next == nil {
 			currentNode.next = currentNode.next.next
-			break
 		}
-
 		currentNode = currentNode.next
 	}
 

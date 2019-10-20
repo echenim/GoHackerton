@@ -56,18 +56,45 @@ import "fmt"
 //	return arr
 //}
 
-
-
-func main(){
+func main() {
 	list := &SingleList{}
+
 	list.Push(&Node{data: "10", next: nil})
-	list.Push(&Node{data: "15", next: nil})
-	list.Push(&Node{data: "8", next: nil})
-	list.Push(&Node{data: "3", next: nil})
-	//node := list.head
 	list.Display()
-	fmt.Printf("\ntop & size of stack is : %v",list.top)
+	fmt.Printf("\ntop & size of stack is : %v", list.top)
 	fmt.Print("\n")
+	list.Push(&Node{data: "15", next: nil})
+	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Print("\n")
+	list.Push(&Node{data: "8", next: nil})
+	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Print("\n")
+	list.Push(&Node{data: "3", next: nil})
+	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Print("\n")
+	fmt.Println("------------pop function ------")
+	//list.Pop()
+	//list.Display()
+	// for list.top != 0 {
+	// 	list.Pop()
+	// 	list.Display()
+	// 	fmt.Printf("\ntop & size of stack is : %v", list.top)
+	// 	fmt.Printf("%v \n", list.top)
+	// 	//list.top--
+	// }
+
 	list.Pop()
 	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v\n", list.top)
+
+	list.Pop()
+	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v\n", list.top)
+	list.Pop()
+	list.Display()
+	fmt.Printf("\ntop & size of stack is : %v\n", list.top)
+
 }
