@@ -1,8 +1,19 @@
 package main
 
-//Enqueue insert into the queue
-func Enqueue() {
+//Queue structure defination
+type Queue struct {
+	size  int
+	front int
+	rear  int
+	arr   []string
+}
 
+//Enqueue insert into the queue
+func (q *Queue) Enqueue(s string) {
+	if q.rear < q.size-1 {
+		q.rear++
+		q.arr[q.rear] = s
+	}
 }
 
 //Dequeue delete from the queue
