@@ -10,10 +10,8 @@ type Queue struct {
 
 //Enqueue insert into the queue
 func (q *Queue) Enqueue(s string) {
-	if q.rear < q.size-1 {
-		q.rear++
-		q.arr[q.rear] = s
-	}
+	q.rear++
+	q.arr[q.rear] = s
 }
 
 //Dequeue delete from the queue
