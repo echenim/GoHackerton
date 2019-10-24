@@ -44,9 +44,6 @@ func (q *Queue) Dequeue() {
 		fmt.Printf("queue rear :: %v\n", q.rear)
 		fmt.Printf("queue size :: %v\n", q.size)
 		fmt.Printf("Current Queue is empty \nReason Front pointer is (%v) and Rear Pointer is (%v) both are equal\n", q.front, q.rear)
-		// q.front = -1
-		// q.rear = q.front
-		// fmt.Printf("Front and Rear pointer reset to %v  %v", q.front, q.rear)
 	}
 
 }
