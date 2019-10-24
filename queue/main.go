@@ -19,19 +19,33 @@ func datagen(size int) []int {
 func main() {
 
 	var q Queue
-	q.size = 10
+	q.size = 3
 	q.front = -1
 	q.rear = q.front
+	var i int
 
 	q.arr = make([]string, q.size, q.size)
 	fmt.Printf("generated data :: %v\n", q.arr)
-	for q.rear < q.size-1 {
+	fmt.Println("----------------start enqueue results --------------------")
+
+	// for q.rear != q.size {
+	// 	val := strconv.Itoa(rand.Intn(1000))
+	// 	q.Enqueue(val)
+	// 	if q.rear < q.size {
+	// 		q.rear++
+	// 	}
+	// }
+
+	for i = 0; i < q.size; i++ {
 		val := strconv.Itoa(rand.Intn(1000))
+		q.rear = i
 		q.Enqueue(val)
-		fmt.Printf("queue rear :: %v\n", q.front)
-		fmt.Printf("queue rear :: %v\n", q.rear)
-		fmt.Printf("queue size :: %v\n", q.size)
-		fmt.Printf("student queue by number :: %v\n", q.arr)
+	}
+
+	fmt.Println("----------------end enqueue results --------------------\n----------------start dequeue results --------------------")
+
+	for q.front <= q.rear {
+		q.Dequeue()
 	}
 
 }
