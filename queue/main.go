@@ -5,25 +5,33 @@ import "fmt"
 func main() {
 	list := &SingleList{}
 
-	list.Push(&Node{data: "10", next: nil})
+	list.Enqueue(&Node{data: "10", next: nil})
 	list.Display()
-	// fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Printf("\nfront pointer is %v & rear pointer is : %v", list.front.data, list.rear.data)
 	fmt.Print("\n")
 
-	list.Push(&Node{data: "15", next: nil})
+	list.Enqueue(&Node{data: "15", next: nil})
 	list.Display()
-	// fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Printf("\nfront pointer is %v & rear pointer is : %v", list.front.data, list.rear.data)
 	fmt.Print("\n")
 
-	list.Push(&Node{data: "20", next: nil})
+	list.Enqueue(&Node{data: "20", next: nil})
 	list.Display()
-	// fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Printf("\nfront pointer is %v & rear pointer is : %v", list.front.data, list.rear.data)
 	fmt.Print("\n")
 
-	list.Push(&Node{data: "25", next: nil})
+	list.Enqueue(&Node{data: "25", next: nil})
 	list.Display()
-	// fmt.Printf("\ntop & size of stack is : %v", list.top)
+	fmt.Printf("\nfront pointer is %v & rear pointer is : %v", list.front.data, list.rear.data)
 	fmt.Print("\n")
+
+	fmt.Print("\n-----------start dequeue------------\n")
+	for n := list.head; n != nil; n = n.next {
+		list.Dequeue()
+		list.Display()
+		fmt.Printf("\nfront pointer is %v & rear pointer is : %v", list.front.data, list.rear.data)
+		fmt.Print("\n")
+	}
 
 }
 
