@@ -40,7 +40,7 @@ func (sl *SingleList) Display() {
 // to a receiver function
 func (sl *SingleList) Dequeue() {
 	if sl.head == nil {
-		fmt.Println("\nQueue is empty\n")
+		fmt.Println("Queue is empty")
 	}
 
 	//check if we have gotten to the last node
