@@ -2,7 +2,7 @@ package main
 
 //Bnode defination for each tree
 type Bnode struct {
-	data       int
+	data       string
 	leftChild  *Bnode
 	rightChild *Bnode
 }

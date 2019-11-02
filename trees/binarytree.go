@@ -11,9 +11,6 @@ type Btree struct {
 func (tree *Btree) Insert(node *Bnode) *Btree {
 	if tree.root == nil {
 		tree.root = node
-		// tree.height = 1
-		// tree.level = 0
-
 	} else {
 		tree.root.insert(node)
 	}
@@ -23,7 +20,7 @@ func (tree *Btree) Insert(node *Bnode) *Btree {
 func (b *Bnode) insert(n *Bnode) {
 	if b == nil {
 		return
-	} else if n.data >= b.data {
+	} else if b.leftChild == nil {
 		if b.leftChild == nil {
 			b.leftChild = n
 		} else {
