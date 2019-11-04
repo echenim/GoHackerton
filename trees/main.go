@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 
 	tree := Btree{}
@@ -10,5 +12,7 @@ func main() {
 	tree.Insert(&Bnode{data: "physicist", leftChild: nil, rightChild: nil})
 	tree.Insert(&Bnode{data: "myron", leftChild: nil, rightChild: nil})
 	tree.Print(tree.root, 0, "M")
+	fmt.Printf("Number of node or branch in this binary tree :  %v", Count(tree.root))
+	//Count(tree.root)
 
 }

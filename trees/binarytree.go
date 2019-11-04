@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	_ "image/jpeg"
 )
 
 //Btree defination for single linked list
@@ -49,4 +50,14 @@ func (tree *Btree) Print(b *Bnode, ns int, ch string) {
 	tree.Print(b.leftChild, ns+2, "L")
 	tree.Print(b.rightChild, ns+2, "R")
 
+}
+
+//Count fucntion for binary tree
+func Count(n *Bnode) int {
+
+	if n == nil {
+		return 0
+	}
+
+	return Count(n.rightChild) + Count(n.leftChild) + 1
 }
