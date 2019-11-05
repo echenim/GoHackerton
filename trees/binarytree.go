@@ -61,3 +61,23 @@ func Count(n *Bnode) int {
 
 	return Count(n.rightChild) + Count(n.leftChild) + 1
 }
+
+//Height fucntion for binary tree
+func Height(n *Bnode) int {
+
+	x := 0
+	y := 0
+
+	if n == nil {
+		return 0
+	}
+
+	x = Height(n.leftChild)
+	y = Height(n.rightChild)
+	if x > y {
+		return x + 1
+	} else {
+		return y + 1
+	}
+
+}
