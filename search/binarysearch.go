@@ -40,39 +40,39 @@ func (b *Bnode) insert(node *Bnode) {
 }
 
 //Print fucntion for displaying the tree nodes and branch
-func (tree *Btree) Print(b *Bnode, ns int, ch string) {
+func (t *Btree) Print(node *Bnode, ns int, ch string) {
 
-	if b == nil {
+	if node == nil {
 		return
 	}
-	fmt.Printf("%v:%v\n", ch, b.data)
-	tree.Print(b.leftChild, ns+2, "L")
-	tree.Print(b.rightChild, ns+2, "R")
+	fmt.Printf("%v:%v\n", ch, node.data)
+	t.Print(node.leftChild, ns+2, "L")
+	t.Print(node.rightChild, ns+2, "R")
 
 }
 
 //Count fucntion for binary tree
-func Count(n *Bnode) int {
+func Count(node *Bnode) int {
 
-	if n == nil {
+	if node == nil {
 		return 0
 	}
 
-	return Count(n.rightChild) + Count(n.leftChild) + 1
+	return Count(node.rightChild) + Count(node.leftChild) + 1
 }
 
 //Height fucntion for binary tree
-func Height(n *Bnode) int {
+func Height(node *Bnode) int {
 
 	x := 0
 	y := 0
 
-	if n == nil {
+	if node == nil {
 		return 0
 	}
 
-	x = Height(n.leftChild)
-	y = Height(n.rightChild)
+	x = Height(node.leftChild)
+	y = Height(node.rightChild)
 	if x > y {
 		return x + 1
 	} else {
