@@ -14,6 +14,6 @@ func main() {
 	tree.Print(tree.root, 0, "M")
 	fmt.Printf("Number of node or branch in this binary tree :  %v\n", Count(tree.root))
 	fmt.Printf("Height of this binary tree :  %v\n", Height(tree.root))
-	//Count(tree.root)
+	Count(tree.root)
 
 }
