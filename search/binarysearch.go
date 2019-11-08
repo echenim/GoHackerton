@@ -22,7 +22,8 @@ func (t *Btree) Insert(node *Bnode) *Btree {
 func (b *Bnode) insert(node *Bnode) {
 	if b == nil {
 		return
-	} else if node.data > b.data {
+	}
+	if node.data <= b.data {
 
 		if b.leftChild == nil {
 			b.leftChild = node
@@ -39,15 +40,67 @@ func (b *Bnode) insert(node *Bnode) {
 	}
 }
 
-//Print fucntion for displaying the tree nodes and branch
-func (t *Btree) Print(node *Bnode, ns int, ch string) {
+//Search function for search the tree
+func (t *Btree) Search(parameters byte) {
+	if t.root == nil {
+
+		return
+	} else {
+		t.root.search(parameters)
+	}
+}
+
+func (b *Bnode) search(parameters byte) {
+	if b == nil {
+		return
+	}
+	if parameters == b.data {
+		fmt.Println("match found")
+	} else if parameters < b.data {
+		if b.leftChild == nil {
+			fmt.Println("match not found")
+		} else {
+			if parameters == b.leftChild.data {
+				fmt.Println("match found")
+			} else {
+				b.leftChild.search(parameters)
+			}
+		}
+	} else {
+		if b.rightChild == nil {
+			fmt.Println("match not found")
+		} else {
+			if parameters == b.rightChild.data {
+				fmt.Println("match found")
+			} else {
+				b.rightChild.search(parameters)
+			}
+		}
+	}
+}
+
+//PreOrder fucntion for displaying the tree nodes and branch
+func (t *Btree) PreOrder(node *Bnode, ch string) {
 
 	if node == nil {
 		return
 	}
-	fmt.Printf("%v:%v\n", ch, node.data)
-	t.Print(node.leftChild, ns+2, "L")
-	t.Print(node.rightChild, ns+2, "R")
+	fmt.Printf("%v:%c  |   ", ch, node.data)
+	t.PreOrder(node.leftChild, "L")
+	t.PreOrder(node.rightChild, "R")
+
+}
+
+//PostOrder fucntion for displaying the tree nodes and branch
+func (t *Btree) PostOrder(node *Bnode, ch string) {
+
+	if node == nil {
+		return
+	}
+
+	t.PostOrder(node.leftChild, "L")
+	t.PostOrder(node.rightChild, "R")
+	fmt.Printf("%v:%c  |   ", ch, node.data)
 
 }
 
