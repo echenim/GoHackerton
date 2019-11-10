@@ -56,7 +56,6 @@ func (b *Bnode) max(node *Bnode) {
 		if node.data < b.rightChild.data {
 			b.rightChild.max(b.rightChild)
 		}
-
 	} else {
 		fmt.Printf("search for maximu value found and is %c\n", node.data)
 	}
@@ -184,8 +183,8 @@ func Count(node *Bnode) int {
 	return Count(node.rightChild) + Count(node.leftChild) + 1
 }
 
-//Height fucntion for binary tree
-func Height(node *Bnode) int {
+//FindHeight fucntion for binary tree
+func FindHeight(node *Bnode) int {
 
 	x := 0
 	y := 0
@@ -194,8 +193,8 @@ func Height(node *Bnode) int {
 		return 0
 	}
 
-	x = Height(node.leftChild)
-	y = Height(node.rightChild)
+	x = FindHeight(node.leftChild)
+	y = FindHeight(node.rightChild)
 	if x > y {
 		return x + 1
 	} else {
