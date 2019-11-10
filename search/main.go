@@ -16,6 +16,18 @@ func main() {
 	tree.Insert(&Bnode{data: 'I', leftChild: nil, rightChild: nil})
 	tree.Insert(&Bnode{data: 'H', leftChild: nil, rightChild: nil})
 
+	tree.Insert(&Bnode{data: 'J', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'L', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'K', leftChild: nil, rightChild: nil})
+
+	tree.Insert(&Bnode{data: 'M', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'O', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'N', leftChild: nil, rightChild: nil})
+
+	tree.Insert(&Bnode{data: 'P', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'R', leftChild: nil, rightChild: nil})
+	tree.Insert(&Bnode{data: 'Q', leftChild: nil, rightChild: nil})
+
 	//tree.Insert(&Bnode{data: 'J', leftChild: nil, rightChild: nil})
 
 	fmt.Print("Pre Order tree  :  ")
@@ -23,6 +35,9 @@ func main() {
 	fmt.Println()
 	fmt.Print("Post Order tree :  ")
 	tree.PostOrder(tree.root, "M")
+
+	fmt.Printf("\nNumber of node or branch in this binary tree :  %v", Count(tree.root))
+	fmt.Printf("\nHeight of this binary tree :  %v", Height(tree.root))
 
 	fmt.Print("\nSearch  : ")
 	tree.Search('G')

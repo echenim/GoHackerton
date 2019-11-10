@@ -58,7 +58,7 @@ func (b *Bnode) max(node *Bnode) {
 		}
 
 	} else {
-		fmt.Printf("\nsearch for maximu value found and is %c\n", node.data)
+		fmt.Printf("search for maximu value found and is %c\n", node.data)
 	}
 
 }
@@ -81,7 +81,7 @@ func (b *Bnode) min(node *Bnode) {
 		}
 
 	} else {
-		fmt.Printf("\nsearch for minimu value found and is %c\n", node.data)
+		fmt.Printf("search for minimu value found and is %c\n", node.data)
 	}
 
 }
