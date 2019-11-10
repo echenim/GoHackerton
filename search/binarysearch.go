@@ -58,7 +58,30 @@ func (b *Bnode) max(node *Bnode) {
 		}
 
 	} else {
-		fmt.Printf("\nsearch parament for max value found and is %c\n", node.data)
+		fmt.Printf("\nsearch for maximu value found and is %c\n", node.data)
+	}
+
+}
+
+//FindMin function for search the tree
+func (t *Btree) FindMin() {
+	if t.root == nil {
+		return
+	} else {
+		t.root.min(t.root)
+	}
+}
+
+func (b *Bnode) min(node *Bnode) {
+	if b == nil {
+		return
+	} else if b.leftChild != nil {
+		if node.data > b.leftChild.data {
+			b.leftChild.min(b.leftChild)
+		}
+
+	} else {
+		fmt.Printf("\nsearch for minimu value found and is %c\n", node.data)
 	}
 
 }
