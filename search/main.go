@@ -24,8 +24,9 @@ func main() {
 	fmt.Print("Post Order tree :  ")
 	tree.PostOrder(tree.root, "M")
 
-	fmt.Print("\nSearch  : ")
-	tree.Search('C')
+	//fmt.Print("\nSearch  : ")
+	//tree.Search('C')
+	tree.FindMax()
 	// fmt.Printf("Number of node or branch in this binary tree :  %v\n", Count(tree.root))
 	// fmt.Printf("Height of this binary tree :  %v\n", Height(tree.root))
 	//fmt.Printf("%v", Search(tree.root, 35).data)

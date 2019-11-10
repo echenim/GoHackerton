@@ -40,10 +40,57 @@ func (b *Bnode) insert(node *Bnode) {
 	}
 }
 
+//FindMax function for search the tree
+func (t *Btree) FindMax() {
+	if t.root == nil {
+		return
+	} else {
+		t.root.max(t.root)
+	}
+}
+
+func (b *Bnode) max(node *Bnode) {
+	if b == nil {
+		return
+	} else if b.rightChild != nil {
+		if node.data < b.rightChild.data {
+			b.rightChild.max(b.rightChild)
+		}
+
+	} else {
+		fmt.Printf("\nsearch parament for max value found and is %c\n", node.data)
+	}
+
+}
+
+// func (b *Bnode) findManx(node *Bnode) {
+// 	if b == nil {
+// 		return
+// 	}
+// 	if b.rightChild != nil {
+// 		if b.data > b.rightChild.data {
+// 			fmt.Printf("not found",b.)
+// 		} else {
+// 			b.leftChild.findManx(node)
+// 		}
+// 	}else if b.rightChild != nil && b.data < b.leftChild.data{
+
+// 	} else {
+// 		if b.rightChild == nil {
+// 			fmt.Println("match not found")
+// 		} else {
+// 			if parameters == b.rightChild.data {
+// 				fmt.Println("match found")
+// 			} else {
+// 				b.rightChild.search(parameters)
+// 			}
+// 		}
+// 	}
+// }
+
 //Search function for search the tree
 func (t *Btree) Search(parameters byte) {
 	if t.root == nil {
-
 		return
 	} else {
 		t.root.search(parameters)
