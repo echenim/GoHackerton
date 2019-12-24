@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/echenim/eze.mathematica"
+//	"github.com/echenim/eze.mathematica"
 )
 
 func main() {
 
-	k:= mathematica.Lin(2)
-	fmt.Println(k)
+	
 	// tree := Btree{}
 	// tree.Insert(&Bnode{data: "echenim", leftChild: nil, rightChild: nil})
 	// tree.Insert(&Bnode{data: "william", leftChild: nil, rightChild: nil})
