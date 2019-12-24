@@ -202,3 +202,36 @@ func FindHeight(node *Bnode) int {
 	}
 
 }
+
+//BalanceFactor of a tree
+func BalanceFactor(node *Bnode) int {
+	rightChildHeight := 0
+	leftChildHeight := 0
+
+	if node == nil {
+		return 0
+	}
+
+	leftChildHeight = BalanceFactor(node.leftChild)
+	rightChildHeight = BalanceFactor(node.rightChild)
+	if leftChildHeight > rightChildHeight {
+		return leftChildHeight + 1
+	} else {
+		return rightChildHeight + 1
+	}
+
+}
+
+// func (b *Bnode) computeBalanceFactor(node *Bnode) int {
+// 	rightChildHeight := 0
+// 	leftChildHeight := 0
+
+// 	if b == nil {
+// 		return 0
+// 	}
+
+// 	rightChildHeight = b.rightChild.computeBalanceFactor(node)
+// 	leftChildHeight = b.leftChild.computeBalanceFactor(node)
+
+// 	return rightChildHeight - leftChildHeight
+// }
