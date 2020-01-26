@@ -12,10 +12,14 @@ func main() {
 	}
 	fmt.Println("......Heap Array formed .........")
 	fmt.Println(H)
-	fmt.Println("......deleted data .........")
-	k := Delete(H, len(H)-1)
-	fmt.Println(k)
-	fmt.Println("......After deleted Heap Array formed .........")
-	fmt.Println(H)
+	for i := len(H) - 1; i > 0; i-- {
+		fmt.Println("......deleted data .........")
+		k := Delete(H, i)
+		fmt.Println(k)
+		fmt.Println("......After deleted Heap Array formed .........")
+		fmt.Println(H)
 
+	}
+	// fmt.Println("......After deleted Heap Array formed .........")
+	// fmt.Println(H)
 }
